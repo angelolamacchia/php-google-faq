@@ -8,10 +8,6 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-li {
-  list-style: none;
-}
-
 header {
   height: 90px;
   width: 100%;
@@ -22,6 +18,9 @@ header {
   left: 0;
   background-color: white;
   z-index: 999;
+}
+header li {
+  list-style: none;
 }
 header .header_top {
   display: flex;
@@ -58,4 +57,11 @@ main {
 }
 main h2 {
   padding: 40px 0 20px 0;
+}
+main #first_list {
+  padding-left: 15px;
+}
+main #second_list {
+  list-style: lower-alpha;
+  padding-left: 20px;
 }

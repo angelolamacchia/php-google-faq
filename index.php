@@ -56,7 +56,20 @@
                 'question'=> 'Quando faccio clic sui risultati della Ricerca Google, le mie chiavi di ricerca vengono inviate ai siti web?',
                 'answer'=> 'In alcuni casi sì. Quando fai clic su un risultato della Ricerca Google, il tuo browser web potrebbe reindirizzare alla pagina web di destinazione anche l\'indirizzo Internet, o URL, della pagina dei risultati di ricerca sotto forma di URL referrer. Talvolta, l\'URL della pagina dei risultati di ricerca potrebbe contenere la query di ricerca che hai inserito. Se utilizzi la ricerca SSL (la funzione di ricerca criptata di Google), nella maggior parte dei casi i termini di ricerca non vengono inviati come parte dell\'URL negli URL referrer. Questo comportamento può fare eccezione, ad esempio se utilizzi alcuni browser meno diffusi. Ulteriori informazioni sulla ricerca SSL sono disponibili qui. Le query di ricerca o le informazioni contenute nell\'URL referrer potrebbero essere disponibili mediante Google Analytics o un\'API (Application Programming Interface). Inoltre, gli inserzionisti potrebbero ricevere informazioni relative all\' esatte parole chiave che hanno determinato il clic su un annuncio.'
             ],
-        ]
+        ];
+
+        $lastQuestion = [
+            'question'=> 'Perché il mio account è associato a un paese?',
+            'answer'=> [
+                            'p'=>['Il tuo account è associato a un paese (o territorio) nei Termini di servizio per poter stabilire due cose:',
+                                1=>['La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:', 
+                                    ['Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell\'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.', 'Google LLC, con sede negli Stati Uniti, per il resto del mondo.']
+                                ],
+                                2=>['La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali.']
+                            ],
+                            'p2'=>'Tieni presente che i servizi Google sono fondamentalmente gli stessi a prescindere dalla società consociata che li offre o dal paese a cui è associato il tuo account.'
+                        ]
+        ]; 
                    
     ?>
 
@@ -82,6 +95,31 @@
             <h2><?php echo $element['question']?></h2>
             <p><?php echo $element['answer']?></p>
         <?php } ?>
+
+        
+        <h2><?php echo $lastQuestion['question']?></h2>
+        <?php foreach($lastQuestion as $content) { ?>
+            
+        <?php } ?>
+        <p><?php echo $lastQuestion['answer']['p'][0]?></p><br>
+        <ol id="first_list">
+            <li>
+                <?php echo $lastQuestion['answer']['p'][1][0] ?>
+                <br><br>
+                <ol id="second_list">
+                    <?php foreach($lastQuestion['answer']['p'][1][1] as $element) { ?>
+                        <li><?php echo $element?></li><br>
+                    <?php } ?>
+                    
+                </ol>
+            </li>
+            <li><?php echo $lastQuestion['answer']['p'][2][0]?></li>
+            
+        </ol>
+
+
+        <p><?php echo $lastQuestion['answer']['p2']?></p>
+     
     </main>
 </body>
 </html>
