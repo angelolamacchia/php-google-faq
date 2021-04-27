@@ -98,9 +98,7 @@
 
         
         <h2><?php echo $lastQuestion['question']?></h2>
-        <?php foreach($lastQuestion as $content) { ?>
-            
-        <?php } ?>
+        
         <p><?php echo $lastQuestion['answer']['p'][0]?></p><br>
         <ol id="first_list">
             <li>
